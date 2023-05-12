@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+    opacity: 100%;
+    font-size: larger;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Poppins", sans-serif;
+    background-image: url("https://wallpaperaccess.com/full/4821155.jpg");
+}
+#logo{
+    text-align: center;
+}
+#body{
+    width: 30%;
+    height: 70%;
+    padding: 1%;
+    margin: 2% auto;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #c0e4ff;
+}
+#menu{
+    width: 30%;
+    height: 90%;
+    padding: 1%;
+    margin: 2% auto;
+    text-align: center;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #c0e4ff;
+}
+.li_menu{
+    display: inline;
+    padding-right: 2%;
+    background-color: #c0e4ff;
+}
+#pi{
+    color: black;
+    text-decoration: none;
+}
+#pi:hover{
+    color: #0077ff;
+}
+#icons{
+    padding-right: 6px;   
+}
+h1{
+    color: #3e98ff;
+}
+#input{
+    width: 40%;
+    padding: 14px 14px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #3e98ff;
+    background-color: whitesmoke;
+}
+::placeholder{
+    opacity: 65%;
+    color: #0077ff;
+    font-size: medium;
+}
+.button{
+    width: 25%;
+    padding: 2%;
+    cursor: pointer;
+    margin: 2% 0% 4%;
+    color: #3e98ff;
+    font-size: medium;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #3e98ff;
+    background-color: whitesmoke;
+}
+.button:hover{
+    color: whitesmoke;
+    background: #3e98ff;
+    border-color: #c0e4ff;
+}
+#redirect{
+    opacity: 65%;
+    cursor: pointer;
+    color: #0077ff;
+    text-decoration: none;
+}
+*:focus {
+    outline: none;
+}

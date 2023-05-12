@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+    opacity: 100%;
+    font-size: larger;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Poppins", sans-serif;
+    background-image: url("https://wallpaperaccess.com/full/4821155.jpg");
+}
+#logo{
+    text-align: center;
+}
+#body{
+    width: 90%;
+    font-size: normal;
+    height: 90%;
+    padding: 1%;
+    margin: 2% auto;
+    border-radius: 20px;
+    background-color: #c0e4ff;
+}
+#menu{
+    width: 90%;
+    height: 90%;
+    padding: 1%;
+    margin: 2% auto;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #c0e4ff;
+}
+.li_menu{
+    display: inline;
+    padding-right: 2%;
+    background-color: #c0e4ff;
+}
+#li_pagin{
+    padding-left: 2%;
+}
+#li_logsign{
+    float: right;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: #0077ff;
+}
+#icons{
+    padding-right: 6px;   
+}
+table{
+    width: 100%;
+}
+#tdTexto{
+    text-align: justify;
+}
+#FuncImg{
+    width: 70%;
+    height: 70%;
+}
+#tdImg{
+    text-align: center;
+}
+#tdButoes{
+    width: 2%;
+    text-align: center;
+}
+.butao{
+    color:#0077ff;
+    padding-top: 2px;
+    border-width: 1px;
+    border-radius: 40%;
+    border-style: solid;
+    border-color: #0077ff;
+    background-color: #c0e4ff;
+}
+.butao:hover{
+    color:#c0e4ff;
+    border-color: #c0e4ff;
+    background-color: #0077ff;
+}
+#body2{
+    width: 90%;
+    padding: 1%;
+    height: 90%;
+    margin: 2% auto;
+    border-radius: 20px;
+    background-color: #c0e4ff;
+}
+#GEMP{
+    color:#0077ff;
+}
