@@ -1,31 +1,42 @@
-<div id="Singin/Signup" align="center">
-  <p>Sign In / Signup</p>
+<div id="HomePage" align="center">
+  <p>Home Page</p>
   <img src="https://github.com/Pereira3/Gemp/assets/95077144/7a7813c9-5b6f-4c9b-95e6-8ff07531d267">
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/4ff9e1fb-0053-4cc4-bdbd-35b5367bfbe4">
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/6f73ccde-36a8-41ec-a2b9-5912157dca24">
 </div>
 
-<div id="GameInfo" align="center">
-  <p>The users and their informations will get stored into a file.<br><br><br>Game Info</p>
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/973885be-b4e5-4250-9a9c-b6a0df3620f3">
+<div id="Singup" align="center">
+  <p><br><br><br>Signup</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/01e36f6d-a519-491f-92c9-24258fababfc">
 </div>
 
-<div id="GameOptions" align="center">
-  <p><br><br><br>Game Options</p>
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/dec9d26e-3119-497e-946c-3f0b6a7c89ac"><br>
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/034f80ce-6e8b-417b-8ab6-6b6a28d6f808">
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/b8e28871-227e-498c-9f98-b88660ffacdb">
+<div id="Login" align="center">
+  <p><br><br><br>Login</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/b276f1e7-7744-46e8-b422-d73f33d28431">
 </div>
 
-<div id="Game" align="center">
-  <p><br><br><br>Game</p>
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/3003e123-6eab-4293-8394-acd1fcc6c65f">
-  <p><br>For every correct word, the player receive 100 points.<br>
-  If the player could't get the right word, for every correct letter ´Yellow or Green´ receive 10 points.<br></p>
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/ea40fe52-698f-47f2-be85-eb1829e1ca4b">
+<div id="Users" align="center">
+  <p><br><br><br>Users Page<br>Geral<br></p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/0ac9d16f-bd06-4495-b775-8407e9974924"><br>
+  <p>Adicionar Projetos / Funcionários</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/320a08df-b9ae-4bd0-abe2-efd0044f8e51"><br>
+  <p>Ver Projetos / Funcionários</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/452071e8-52e2-41ee-913f-a9c3256dddff"><br>
+  <p>Remover Projetos / Funcionários</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/d1cccbf6-f001-4b13-86f4-d2504de7ed91">
 </div>
 
-<div id="Erros" align="center">
+<div id="Admin" align="center">
+  <p><br><br><br>Admin Page<br>Geral<br></p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/95f11ab1-6f05-4daf-bacc-37b3201d5c8c"><br>
+  <p>Gemp</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/d6ecf681-274c-4d50-b59e-f7c0ea21b761"><br>
+  <p>The Gerar PDF button is used to generate a PDF with information and tables exactly the same as those displayed on the GEMP tab.</p>
+  <p>Remover Empresa</p>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/78b5240c-445d-42a7-a18f-17e919eb89ae">
+</div>
+
+<div id="Errors" align="center">
   <p><br><br><br>Errors</p>
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/b386edcd-c5ac-43f0-aebe-7099e4daeb81">
-  <img src="https://github.com/Pereira3/Wordle/assets/95077144/8ecb7bf3-e795-4502-94c5-cdc678b5d44d">
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/eb47f532-5c0b-439e-8d8b-2107ad634896"><br>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/c56fb935-8724-4b9e-8b28-849245cd9605">
 </div>
