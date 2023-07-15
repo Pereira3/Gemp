@@ -3,31 +3,39 @@
 @include 'config.php';
 
 if(isset($_POST['button'])){
-    
-    $nome = mysqli_real_escape_string($conn, $_POST['fullname']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $cemail = ($_POST['cemail']);
+
+    $nome = $_POST['fullname'];
+    $email = $_POST['email'];
+    $cemail = $_POST['cemail'];
     $password = md5($_POST['password']);
     $cpassword = md5($_POST['cpassword']);
     $perfil = $_POST['perfil'];
 
-    $select = " SELECT * FROM perfis WHERE email = '$email'";
-    $result = mysqli_query($conn, $select);
+    $data = array(
+        'signup' => 1,
+        'nome' => $nome,
+        'email' => $email,
+        'cemail' => $cemail,
+        'password' => $password,
+        'cpassword' => $cpassword,
+        'perfil' => $perfil
+    );
 
-    if(mysqli_num_rows($result) > 0){
-        //Email =
-        $error[] = 'Utilizador já existente!';
-    }else{
-        if($password != $cpassword){
-            $error[] = 'Password não corresponde!';
-        }else if($email != $cemail){
-            $error[] = 'Email não corresponde!';
-        }else{
-            $insert = "INSERT INTO perfis(Nome, Email, Password, Perfil) VALUES('$nome', '$email', '$password', '$perfil')";
-            mysqli_query($conn, $insert);
-            header('Location: LogIn.php');
-        }
+    $query = http_build_query($data);
+    $url = "http://localhost:8888/Projeto/api.php?" . $query;
+    
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $curl_response = curl_exec($curl);
+    curl_close($curl);
+
+    $response = json_decode($curl_response, true);
+
+    if ($response['success']) {
+        header('Location: LogIn.php');
+        exit;
     }
+
 };
 
 ?>
@@ -37,25 +45,26 @@ if(isset($_POST['button'])){
     <head>
         <meta charset="UTF-8">
         <title>Gemp Sign Up</title>
-        <link rel="stylesheet" href="LogSign.css">
+        <link rel="stylesheet" href="./css/LogSign.css">
         <script src="Projeto.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
     </head>
     <body>
         <div id="logo">
-            <a href = "Projeto.html"><img src="./imagens/Gemp.png"></a>
+            <a href = "Projeto.php"><img src="./imagens/Gemp.png"></a>
         </div>
         <ul id="menu">
-            <li class="li_menu" id="li_pagin"><i class="fa-solid fa-home" id="icons"></i><a id="pi" href = "Projeto.html">Página Inicial</a></li>
+            <li class="li_menu" id="li_pagin"><i class="fa-solid fa-home" id="icons"></i><a id="pi" href = "Projeto.php">Página Inicial</a></li>
         </ul>
 
         <div id="body">
             <h1>Sign Up</h1>
             <?php
-                if(isset($error)){
-                    foreach($error as $error){
-                        echo '<span class="error-msg">'.$error.'</span>';
+                if(!($response['success'])){
+                    $error = $response['error'];
+                    foreach ($error as $errorMsg) {
+                        echo '<div class="error-msg">' . $errorMsg . '</div>';
                     }
                 }
             ?>
@@ -66,7 +75,7 @@ if(isset($_POST['button'])){
                 <input id="input" required autocomplete="off" type="password" name="password" placeholder="Palavra-Passe"><br>
                 <input id="input" required autocomplete="off" type="password" name="cpassword" placeholder="Confirme a Palavra-Passe"><br>
                 <div id="divselect">
-                    <select name="perfil" required>
+                    <select name="perfil" id="selectPerfil" required>
                         <option selected default value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>

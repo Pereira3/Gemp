@@ -3,25 +3,32 @@
 @include 'config.php';
 session_start();
 
-if(isset($_POST['button'])){
-    
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+if (isset($_POST['button'])) {
+
+    $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $select = " SELECT * FROM perfis WHERE email = '$email' && password = '$password' ";
-    $result = mysqli_query($conn, $select);
+    $url = "http://localhost:8888/Projeto/api.php?email=".urlencode($email)."&password=".urlencode($password);
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $curl_response = curl_exec($curl);
+    curl_close($curl);
 
-    if(mysqli_num_rows($result) > 0){
-        $row = mysqli_fetch_array($result);
-        if($row['Perfil'] == 'admin'){
+    $response = json_decode($curl_response, true);
+
+    if ($response['success']) {
+        $row = $response['row'];
+        if ($row['Perfil'] == 'admin') {
             $_SESSION['admin_Nome'] = $row['Nome'];
+            $_SESSION['IDE'] = $row['IDE'];
             header('Location: Admin.php');
-        }else if($row['Perfil'] == 'user'){
+            exit;
+        } else if ($row['Perfil'] == 'user') {
             $_SESSION['user_Nome'] = $row['Nome'];
+            $_SESSION['IDE'] = $row['IDE'];
             header('Location: User.php');
+            exit;
         }
-    }else{
-        $error[] = 'Dados inseridos incorretos!';
     }
 };
 
@@ -32,26 +39,25 @@ if(isset($_POST['button'])){
     <head>
         <meta charset="UTF-8">
         <title>Gemp Login</title>
-        <link rel="stylesheet" href="Login.css">
+        <link rel="stylesheet" href="./css/Login.css">
         <script src="Projeto.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
     </head>
     <body>
         <div id="logo">
-            <a href = "Projeto.html"><img src="./imagens/Gemp.png"></a>
+            <a href = "Projeto.php"><img src="./imagens/Gemp.png"></a>
         </div>
         <ul id="menu">
-            <li class="li_menu" id="li_pagin"><i class="fa-solid fa-home" id="icons"></i><a id="pi" href = "Projeto.html">Página Inicial</a></li>
+            <li class="li_menu" id="li_pagin"><i class="fa-solid fa-home" id="icons"></i><a id="pi" href = "Projeto.php">Página Inicial</a></li>
         </ul>
 
         <div id="body">
             <h1>Login</h1>
             <?php
-                if(isset($error)){
-                    foreach($error as $error){
-                        echo '<span class="error-msg">'.$error.'</span>';
-                    }
+                if(!($response['success'])){
+                    $error = $response['error'];
+                    echo '<div class="error-msg">'.$error.'</div>';
                 }
             ?>
             <form method="POST">
