@@ -29,7 +29,7 @@
   <p><br><br><br>Admin Page<br>Geral<br></p>
   <img src="https://github.com/Pereira3/Gemp/assets/95077144/95f11ab1-6f05-4daf-bacc-37b3201d5c8c"><br>
   <p>Gemp</p>
-  <img src="https://github.com/Pereira3/Gemp/assets/95077144/d6ecf681-274c-4d50-b59e-f7c0ea21b761"><br>
+  <img src="https://github.com/Pereira3/Gemp/assets/95077144/a4eaa483-231f-4ad1-ad09-446347b8dd2a"><br>
   <p>The Gerar PDF button is used to generate a PDF with information and tables exactly the same as those displayed on the GEMP tab.</p>
   <p>Remover Empresa</p>
   <img src="https://github.com/Pereira3/Gemp/assets/95077144/78b5240c-445d-42a7-a18f-17e919eb89ae">
